@@ -140,7 +140,7 @@ class Item {
 
 class TaxableItem : Item {
     public TaxableItem(double price, string name, bool isTaxable) : base(price, name, isTaxable) {///base references to the Item class
-    
+
     }
     public override double getPrice() {
         return price + (price * 0.08); 
