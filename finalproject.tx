@@ -1,0 +1,22 @@
+The idea that I had for my final project was to create a program that can read a grocery list and give you the total cost. It would have individual items like apples and oranges and bread and water, that would have set values of price but would never be seen. The items would be added together to get a total, and then you would multiple that total by a tax value that is set and doesn’t change. 
+
+
+I would use Abstraction to multiply the coupon by the items, and then multiply the tax to get the total 
+
+I would use Encapsulation to have a value for the food items that are set, and a value for the tax (private instead of public) /////
+
+I would use Inheritance to show that food is applicable to the tax value. ////???
+
+I would use Polymorphism by having a receipt that is made up of the items, tax, and potentially a coupon value. /////
+
+two different values for what is taxabel and what is not
+
+Input:
+Apple
+Orange
+Bread
+
+Output:
+Gross Amount 234
+Tax added 3452
+Total is $13.45

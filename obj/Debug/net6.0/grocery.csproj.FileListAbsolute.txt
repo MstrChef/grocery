@@ -1,0 +1,15 @@
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\bin\Debug\net6.0\grocery.exe
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\bin\Debug\net6.0\grocery.deps.json
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\bin\Debug\net6.0\grocery.runtimeconfig.json
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\bin\Debug\net6.0\grocery.dll
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\bin\Debug\net6.0\grocery.pdb
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.csproj.AssemblyReference.cache
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.AssemblyInfoInputs.cache
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.AssemblyInfo.cs
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.csproj.CoreCompileInputs.cache
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.dll
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\refint\grocery.dll
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.pdb
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\grocery.genruntimeconfig.cache
+C:\Users\sbmei\Desktop\Fall 2022\CS 210\grocery\obj\Debug\net6.0\ref\grocery.dll
