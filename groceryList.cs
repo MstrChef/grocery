@@ -19,14 +19,14 @@ class grocery
         Console.WriteLine("Please enter your items below: ");
         Console.WriteLine("Enter 'Done' when you finish your list or if you have less than 8 items.");
 
-        var Apples = new Item(1.00, "Apples", true);
-        var Oranges = new Item(1.00, "Oranges", true);
-        var Bananas = new Item(1.00, "Bananas", true);
-        var Ham = new Item(3.50, "Ham", true);
-        var Turkey = new Item(3.50, "Turkey", true);
-        var Cheese = new Item(3.00, "Cheese", true);
-        var Plates = new Item(2.50, "Plates", false);
-        var Napkins = new Item(2.50, "Napkins", false);
+        var Apples = new Item(1.00, "Apples", false);
+        var Oranges = new Item(1.00, "Oranges", false);
+        var Bananas = new Item(1.00, "Bananas", false);
+        var Ham = new Item(3.50, "Ham", false);
+        var Turkey = new Item(3.50, "Turkey", false);
+        var Cheese = new Item(3.00, "Cheese", false);
+        var Plates = new TaxableItem(2.50, "Plates", true);
+        var Napkins = new TaxableItem(2.50, "Napkins", true);
 
         /// has the values for each item in store
         var WalmartItems = new Dictionary <string,Item>();
@@ -69,7 +69,7 @@ static List<Item> items(Dictionary <string,Item> WalmartItems) {
         if (WalmartItems.ContainsKey(input)) {
             string inputNewItem = Console.ReadLine();
 
-            if (inputNewItem == "Done"){
+            if (inputNewItem == "Done") {
                 listTotal = 8;
             }
             /// gets the next value and will repeat this
@@ -79,7 +79,7 @@ static List<Item> items(Dictionary <string,Item> WalmartItems) {
             }
         }
         /// if statement to show that item is not valid
-        else{
+        else {
             Console.WriteLine("Invalid item, please enter item again.");
         }
     }    
@@ -90,13 +90,7 @@ static List<Item> items(Dictionary <string,Item> WalmartItems) {
  static  double computeTotal(List<Item> itemList) {
     double total = 0;
     foreach (Item item in itemList) {
-        if (item.getisTaxable() == true) {
-            double tax = item.getPrice() * 0.08;
-            total = tax + item.getPrice() + total;
-        }
-        else {
-            total = item.getPrice() + total;
-        }
+       total = item.getPrice() + total;
     }
     return total;
  }
@@ -104,7 +98,8 @@ static List<Item> items(Dictionary <string,Item> WalmartItems) {
 static double computeSubTotal(List<Item> itemList) {
     double subTotal = 0;
         foreach (Item item in itemList) {
-            subTotal = item.getPrice() + subTotal;
+            subTotal = item.basePrice() + subTotal;
+
         }
         return subTotal;
 }
@@ -117,31 +112,38 @@ static double computeTax(double total, double subTotal) {
 /// creates the receipt with the total price
 static void receipt(double subTotal, double taxValue, double total) {
     Console.WriteLine("Here is your receipt");
-    Console.WriteLine("Total: $" + subTotal);
+    Console.WriteLine("SubTotal: $" + subTotal);
     Console.WriteLine("Tax: $" + taxValue);
     Console.WriteLine("Total Due: $" + total);
     }
 }
 
 class Item {
-    private double price;
+    protected double price;
     private string name;
     private bool isTaxable;
-    public Item(double price, string name, bool isTaxable){
+    public Item(double price, string name, bool isTaxable) {
         this.price = price;
         this.name = name;
         this.isTaxable = isTaxable;
     }
-    public double getPrice() {
+    virtual public double getPrice() {
         return price;
     }
     public bool getisTaxable() {
         return isTaxable;
     }
+    public double basePrice() {
+        return price;
+    }
 }
 
 class TaxableItem : Item {
-    public TaxableItem(double price, string name, bool isTaxable) : base(price, name, isTaxable) ///base references to the Item class
-    {
+    public TaxableItem(double price, string name, bool isTaxable) : base(price, name, isTaxable) {///base references to the Item class
+    
     }
-}
+    public override double getPrice() {
+        return price + (price * 0.08); 
+    }
+
+} 
